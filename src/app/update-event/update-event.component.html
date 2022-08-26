@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+        <h2>Modifier un evenement :</h2>
+    </div>
+    <form>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Titre d'evenement</label>
+            <input type="text" [(ngModel)]="currentEvent.titre" name="titre" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Type d'evenement</label>
+            <select class="form-control"name="type"  [(ngModel)]="currentEvent.type">
+                <option *ngFor="let t of types" [value]="t" >{{t}}
+                </option>
+        </select>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Date d'evenement</label>
+            <input type="datetime-local" [(ngModel)]="currentEvent.DT" name="DT" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Description d'evenement</label>
+            <input type="text" [(ngModel)]="currentEvent.description" name="description" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>photo d'evenement</label>
+            <input type="text" [(ngModel)]="currentEvent.photo" name="photo" class="form-control">
+        </div>
+
+      
+        <div class="mt-2">
+            <button type="submit" (click)="update()" class="btn btn-success">Modifier</button>
+        </div>
+    </form>
+</div>
+
